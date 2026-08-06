@@ -4,7 +4,7 @@ import Navbar from './Navbar'
 
 const MainLayout:React.FC<ChildrenInterface> = ({children}) => {
   return (
-    <div className='max-w-md relative h-screen overflow-hidden border xl:border-gray-800 mx-auto'>
+    <div className='max-w-md relative h-screen overflow-hidden mx-auto'>
        <Navbar/>
 
        <main className='p-4'>
