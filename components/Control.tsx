@@ -144,7 +144,7 @@ const Control: FC<ControlInterface> = ({
           {/* Right switch section */}
           <div className="flex shrink-0 items-center">
             <Switch
-              isSelected={!isSelected}
+              isSelected={isSelected}
               onChange={handleChange}
               aria-label={`Toggle ${name}`}
             >
