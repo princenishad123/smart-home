@@ -11,7 +11,7 @@ import ESP32Status from './EspStatus';
 const Home = () => {
 
   const handleDevice = (payload:{id:string,value:boolean})=>{
-    const status = payload.value ? "off" :"on"
+    const status = payload.value ? "on" :"off"
       socket.emit("led",{status,id:payload.id});
   };
 
