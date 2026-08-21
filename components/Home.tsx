@@ -6,6 +6,7 @@ import { Card } from '@heroui/react';
 import Control from './Control';
 import { Fan, Lightbulb } from 'lucide-react';
 import socket from '@/config/socket';
+import ESP32Status from './EspStatus';
 
 const Home = () => {
 
@@ -30,17 +31,17 @@ const Home = () => {
   return (
     <div className='space-y-4'>
 
-      <Card>
+ 
 
      <MannerControl/>
 
         <Category/>
 
-      </Card>
+    
 
 
 
-<div className='grid grid-cols-2 gap-4'>
+<div className='space-y-4'>
   <Control
   id='btn1'
   name='Fan'
@@ -54,7 +55,7 @@ const Home = () => {
   <Control
   id='btn2'
 
-  name='Cube Light'
+  name='Tube Light'
   icon={<Lightbulb/>}
   iconColor='text-blue-600'
   bgColor={"bg-blue-200"}
@@ -77,21 +78,12 @@ const Home = () => {
 </div>
       
 
-  
-     
 
-     <Card>
-      <Card.Title>
-        Status
-      </Card.Title>
-      <Card.Content>
-         <p className='text-red-500 font-semibold' >Device not connect</p>
-      </Card.Content>
-      <Card.Description>
-       Make sure device always connected .
-      </Card.Description>
-      
-     </Card>
+<ESP32Status
+  connected={true}
+  deviceName="ESP Device"
+  deviceId="esp-001"
+/>
 
 
     </div>
