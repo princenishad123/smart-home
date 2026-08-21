@@ -4,20 +4,21 @@ import { Lightbulb } from 'lucide-react'
 import React, { FC, ReactNode, useState } from 'react'
 
 interface ControlInterface {
+  id:string;
     name:string;
     icon:ReactNode,
     bgColor:string,
     iconColor:string,
-    onChange?:()=>void
+    onChange?:(payload:{id:string,value:boolean})=>void
 }
 
-const Control:FC<ControlInterface> = ({name = "Light",icon = <Lightbulb/>,bgColor = "bg-purple-200",iconColor = "text-purple-600",onChange}) => {
+const Control:FC<ControlInterface> = ({id = "btn1",name = "Light",icon = <Lightbulb/>,bgColor = "bg-purple-200",iconColor = "text-purple-600",onChange}) => {
       const [isSelected, setIsSelected] = useState(false);
 
      const handleChange = ()=>{
         
         if(onChange)
-            onChange()
+            onChange({value:isSelected,id})
 
         setIsSelected(!isSelected)
 
